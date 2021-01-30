@@ -1,6 +1,6 @@
 # collect_code
 
-![image](https://note.youdao.com/yws/public/resource/3eb676bb024ccc16ccd73b4b3768dbcf/xmlnote/795F5282D07D4A699380BD1792A1F523/17278)
+![image](https://github.com/Michael-SZM/collect_code/blob/master/yl.png)
 
 添加富文本工具类，支持快速设置各种文本样式，包括点击事件和图片添加，可以灵活组合使用。使用见Demo
 
@@ -187,6 +187,6 @@ findViewById<TextView>(R.id.latex01).apply {
         
         
 ```
-![image](https://github.com/Michael-SZM/collect_code/blob/master/yl.png)
+
 
 
