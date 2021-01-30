@@ -184,6 +184,6 @@ findViewById<TextView>(R.id.latex01).apply {
         
         
 ```
-![Image text](https://github.com/Michael-SZM/collect_code/blob/master/yl.png)
+![image](https://github.com/Michael-SZM/collect_code/blob/master/yl.png)
 
 
