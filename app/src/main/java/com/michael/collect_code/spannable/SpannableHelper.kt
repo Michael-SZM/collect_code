@@ -148,6 +148,7 @@ class SpannableHelper(defaultMsg: String = "") {
      * typeface
      * drawableMarginConfig  添加图片
      * iconMarginConfig 添加图片
+     * cusSpan 添加自定义sapn
      */
     fun opString(
         cc: String,
@@ -160,7 +161,7 @@ class SpannableHelper(defaultMsg: String = "") {
         subscript: Boolean = false,
         superscript: Boolean = false,
         urlConfig: UrlConfig? = null,
-        quote: QuoteConfig = QuoteConfig(),
+        quote: QuoteConfig? = null,
         maskFilter: MaskFilter? = null,
         leadingMarginConfig: LeadingMarginConfig? = null,
         absoluteSizeConfig: AbsoluteSizeConfig? = null,
@@ -168,7 +169,8 @@ class SpannableHelper(defaultMsg: String = "") {
         bulletConfig: BulletConfig? = null,
         drawableMarginConfig: DrawableMarginConfig? = null,
         iconMarginConfig: IconMarginConfig? = null,
-        typefaceConfig: TypefaceConfig? = null
+        typefaceConfig: TypefaceConfig? = null,
+        cusSpan:Any? = null
     ): SpannableHelper {
         val start = sb.toString().length
         val end = start + cc.length
@@ -193,7 +195,8 @@ class SpannableHelper(defaultMsg: String = "") {
             bulletConfig,
             drawableMarginConfig,
             iconMarginConfig,
-            typefaceConfig
+            typefaceConfig,
+            cusSpan
         )
     }
 
@@ -211,7 +214,7 @@ class SpannableHelper(defaultMsg: String = "") {
         subscript: Boolean = false,
         superscript: Boolean = false,
         urlConfig: UrlConfig? = null,
-        quote: QuoteConfig = QuoteConfig(),
+        quote: QuoteConfig? = null,
         maskFilter: MaskFilter? = null,
         leadingMarginConfig: LeadingMarginConfig? = null,
         absoluteSizeConfig: AbsoluteSizeConfig? = null,
@@ -219,7 +222,8 @@ class SpannableHelper(defaultMsg: String = "") {
         bulletConfig: BulletConfig? = null,
         drawableMarginConfig: DrawableMarginConfig? = null,
         iconMarginConfig: IconMarginConfig? = null,
-        typefaceConfig: TypefaceConfig? = null
+        typefaceConfig: TypefaceConfig? = null,
+        cusSpan:Any? = null
     ): SpannableHelper {
         sb.append(cc)
         if (color != -1) {
@@ -254,7 +258,7 @@ class SpannableHelper(defaultMsg: String = "") {
         if (urlConfig != null && urlConfig.valid) {
             sb.setSpan(UrlSpan(urlConfig.url,urlConfig.color,urlConfig.showUnderLine), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
-        if (quote.valid) {
+        if (quote != null && quote.valid) {
             sb.setSpan(QuoteSpan(quote.color), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
         if (maskFilter != null) {
@@ -314,6 +318,14 @@ class SpannableHelper(defaultMsg: String = "") {
                 start,
                 end,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+        if (cusSpan != null){
+            sb.setSpan(
+                    cusSpan,
+                    start,
+                    end,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
         return this
