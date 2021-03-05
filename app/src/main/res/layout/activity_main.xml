@@ -33,6 +33,36 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/btn_default_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="default_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_dy_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dy_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_test_glide_download_local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn_test_glide_download_local"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </LinearLayout>
 
 

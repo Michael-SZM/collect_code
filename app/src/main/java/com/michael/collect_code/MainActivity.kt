@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        IconChangeDetector.addDetector(this)
+
 
         findViewById<Button>(R.id.btn_dialog).setOnClickListener {
             showDialog()
@@ -21,6 +23,16 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_spannable).setOnClickListener {
             startActivity(Intent(this,LatexActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_default_icon).setOnClickListener {
+            IconUtils().setIcon(this,"com.michael.collect_code.MoRenIconActivity")
+        }
+        findViewById<Button>(R.id.btn_dy_icon).setOnClickListener {
+            IconUtils().setIcon(this,"com.michael.collect_code.DyIconActivity")
+        }
+        findViewById<Button>(R.id.btn_test_glide_download_local).setOnClickListener {
+            startActivity(Intent(this,GlideDownloadedShowActivity::class.java))
         }
 
     }
@@ -53,4 +65,11 @@ class MainActivity : AppCompatActivity() {
             Log.e("dia--", "dismiss  dialog")
         })
     }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // 如果临近活动时间，就不销毁，否则销毁
+    }
+
 }

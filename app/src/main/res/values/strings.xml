@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Collect_code</string>
+    <string name="app_moren_name">默认名字</string>
+    <string name="app_dy_name">图标修改</string>
 </resources>
